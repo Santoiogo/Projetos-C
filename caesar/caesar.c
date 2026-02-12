@@ -14,14 +14,14 @@ int main(int argc, char *argv[])
     Exibir o texto criptografado
     */
    int erro;
-   if(argc == 2)
+   if (argc == 2)
    {
-    erro = command_line(argv[1]);
+        erro = command_line(argv[1]);
    }
    if (argc != 2 || erro == 1)
    {
-    printf("Usage: ./ceaser key\n");
-    return 1;
+        printf("Usage: ./ceaser key\n");
+        return 1;
    }
 
    printf("Plaintext:  ");
@@ -33,13 +33,13 @@ int main(int argc, char *argv[])
    int m = 0;
    do
    {
-    int n = caracteres[m];
-    if(n == 0) // se n digitar nada
-    {
-        break;
-    }
-    caracteres[m] = rotacao(caracteres[m], valor);
-    m++;
+        int n = caracteres[m];
+        if(n == 0) // se n digitar nada
+        {
+            break;
+        }
+        caracteres[m] = rotacao(caracteres[m], valor);
+        m++;
    }
    while(caracteres[m] != '\0');
 
@@ -54,7 +54,7 @@ int command_line(char num[])
     {
         if (num[i] < '0' || num[i] > '9')
         {
-            return 1;   // erro
+            return 1;// erro
         }
     }
     return 0;
@@ -66,18 +66,18 @@ char rotacao(char letra_prim, int criptografia )
     int letra = letra_prim; // a = letra
     char letra_final;
 
-    if(letra >= 97 && letra <= 122)
+    if (letra >= 97 && letra <= 122)
     {
-    letra_final = 97 + ((letra - 97 + criptografia) % 26);
-    return letra_final;
+        letra_final = 97 + ((letra - 97 + criptografia) % 26);
+        return letra_final;
     }
-    if(letra >= 65 && letra <= 90)
+    if (letra >= 65 && letra <= 90)
     {
-    letra_final = 65 + ((letra - 65 + criptografia) % 26);
-    return letra_final;
+        letra_final = 65 + ((letra - 65 + criptografia) % 26);
+        return letra_final;
     }
     else
     {
-    return letra;
+        return letra;
     }
 }
