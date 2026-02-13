@@ -76,7 +76,7 @@ int contagem(char letras[])
         {
             for (int k = 0; repetidas[k] != '\0'; k++) // loop que verifica se cada letra armazenada no repetidas é igual a letra q ta no loop principal
             {
-                if(repetidas[k] == letras[i])
+                if(tolower(repetidas[k]) == tolower(letras[i]))
                 {
                  erro = -2;
                 }
