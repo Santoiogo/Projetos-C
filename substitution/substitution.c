@@ -5,8 +5,6 @@
 
 int erro = 0;
 char repetidas[26];
-char lowalfabeto[26];
-char upalfabeto[26];
 
 int contagem(char letras[]);
 char cifra(char texto);
@@ -43,14 +41,6 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    for(int i = 0; i < 26; i++)
-    {
-        char n = 'a';
-        char d = 'A';
-        lowalfabeto[i] = n + i;
-        upalfabeto[i] = d + i;
-    }
-    
     printf("Plaintext:  ");
     char *texto = ler_linha();
     int i = strlen(texto);
