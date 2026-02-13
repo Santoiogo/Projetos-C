@@ -93,37 +93,15 @@ int contagem(char letras[])
 
 char cifra(char texto)
 {
-    int n = 0;
-    if (texto == 'A')
+    if (isalpha(texto))
     {
-        return texto = repetidas[0];
-    }
-    if (texto == 'a')
-    {
-        texto = repetidas[0];
-        return texto + 32;
-    }
-    if(islower(texto))
-    {
-        do
-        {
-            n++;
-        }
-        while(texto != lowalfabeto[n]);
+        int i = tolower(texto) - 'a';
+        char c = repetidas[i];
 
-        texto = repetidas[n];
-        return texto + 32;
-    }
-    if(isupper(texto))
-    {
-        do
-        {
-            n++;
-        }
-        while(texto != upalfabeto[n]);
-
-        texto = repetidas[n];
-        return texto;
+        if (isupper(texto))
+            return toupper(c);
+        else
+            return tolower(c);
     }
     return texto;
 }
